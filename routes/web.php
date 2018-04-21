@@ -24,6 +24,11 @@ Route::post('/registration', 'RegistrationController@store');
 Route::get('/login', 'LoginController@index')->name('login.index');
 Route::post('/login', 'LoginController@verify');
 
+Route::get('/adminlogin', 'AdminLoginController@index')->name('adminlogin.index');
+Route::post('/adminlogin', 'AdminLoginController@verify');
+
+Route::get('/admindashboard', 'AdminDashboardController@index')->name('admindashboard');
+
 
 Route::get('/logout', 'LogoutController@index')->name('logout');
 
@@ -41,7 +46,7 @@ Route::get('/logout', 'LogoutController@index')->name('logout');
 // Route::delete('/category/{id}', 'CategoryController@destroy');
 
 // Route::get('/product', 'ProductController@index');
-// Route::get('/product/create', 'ProductController@create');
+Route::get('/product/create', 'ProductController@create')->name('product.create');
 Route::get('/product/{id}', 'ProductController@show');
 // Route::get('/product/{id}/edit', 'ProductController@edit');
 // Route::get('/product/{id}/delete', 'ProductController@delete');
@@ -54,3 +59,6 @@ Route::get('/product/{id}', 'ProductController@show');
 
 //Route::resource('/supplier', 'SupplierController');
 //Route::get('/supplier/{id}/delete', 'SupplierController@delete');
+
+Route::get('/cart','CartController@index')->name('cart.index');
+Route::post('/cart/addtocart','CartController@addtocart');

@@ -4,11 +4,7 @@
 	<title>Login</title>
 	@include('partials.head')
 </head>
-<body id="login">
-	<header>
-		@include('partials.header')
-	</header>
-
+<body id="adminlogin">
 	<div class="container">
 	    <div class="row">
 	        <div class="col-md-5 full-panel">
@@ -76,7 +72,7 @@
 
 	<hr>
 	<footer class="bg-dark text-white">
-	@include('partials.footer')
+	<% include ../partials/footer %>
 	</footer>
 
 </body>

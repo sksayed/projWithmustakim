@@ -29,7 +29,7 @@
 					<p class="text-center text-danger"><%= errorMessage.message %></p>
 				</div>
 			<% } %> -->
-			<form method="post"  action="/cart/addtocart/<%=result[i].id%>">
+			<form method="post"  action="/cart/addtocart">
 				
 				<div class="form-group">
 					<p><strong>Available Quantity: </strong>{{$p->quantity}}</p>
@@ -37,15 +37,15 @@
 				        Quantity: </label>
 				    <div class="col-sm-8 col-sm-offset-1">
 				        <input type="hidden" id="proid" value="{{$p->id}}" name="id">
-				        <input type="text" class="form-control font" id="quantity" value="1" name="quantity">
+				        <input type="text" class="form-control font" id="quantity" value="1" name="quantity" onchange="check()">
 				    </div>
 
 				    <!-- 		Control -->
 				    <div class="control">
 				    	<!-- Start Button buying -->
-				    	<button class="btndetails button" type="submit" id='addtocart' onclick="check()">
+				    	<button class="btndetails button" type="submit" id='addtocart'>
 				    		<!-- 		the Price -->
-				    		<span class="price">{{$p->price}}</span>
+				    		<span class="price">BDT {{$p->price}}</span>
 				    		<!-- 		shopping cart icon-->
 				    		<span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
 				    		<!-- 		Buy Now / ADD to Cart-->

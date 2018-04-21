@@ -37,10 +37,11 @@ class ProductController extends Controller
     public function create()
     {
     	//Category::all()
-    	$categories = DB::table('categories')
-    		->get();
+    	// $categories = DB::table('categories')
+    	// 	->get();
 
-    	return view('product.create', ['categories' => $categories]);
+        // return view('product.create', ['categories' => $categories]);
+    	return view('product.create');
     }
 
     public function edit($id)
