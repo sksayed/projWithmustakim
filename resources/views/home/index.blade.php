@@ -22,7 +22,7 @@
 								<figure>
 								  <img src="https://i.imgur.com/ruU04I6.jpg" alt='Hello Moni'>
 									<figcaption>{{$product->productname}}</figcaption>
-									<p>{{$product->category}}</p>
+									<p>{{$product->categoryname}}</p>
 								    <span class="price">{{$product->price}}</span>
 							    	<a href="/product/{{$product->id}}" class="button" type="submit">Buy Now</a> 
 								</figure>

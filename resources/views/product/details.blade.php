@@ -78,7 +78,7 @@
 					<h2>The Description</h2>
 					<ul>
 						<li><strong>Details: </strong>{{$p->details}}</li>
-						<li><strong>Category: </strong>{{$p->category}}</li>
+						<li><strong>Category: </strong>{{$p->categoryname}}</li>
 					</ul>
 				</div>
 			</div>

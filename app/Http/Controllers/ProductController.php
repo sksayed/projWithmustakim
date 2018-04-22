@@ -26,7 +26,8 @@ class ProductController extends Controller
     {
     	// $product = Product::find($id);
         $product=DB::table('products')
-            ->where('id',$id)
+            ->join('categories', 'products.categoryId', '=', 'categories.id')
+            ->select('products.*', 'categories.categoryname')
             ->first();
 
     	//dd($product->category->categoryName);

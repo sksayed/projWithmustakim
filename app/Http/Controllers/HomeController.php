@@ -10,7 +10,9 @@ class HomeController extends Controller
     public function index(Request $request)
     {
     	$products=DB::table('products')
-        ->get();
+            ->join('categories', 'products.categoryId', '=', 'categories.id')
+            ->select('products.*', 'categories.categoryname')
+            ->get();
         return view('home.index', ['products' => $products]);  	
     }
 }
