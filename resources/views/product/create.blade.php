@@ -29,7 +29,7 @@
 	                			<label>{{session('message')}}</label>
 	                		</div>
 	                @endif
-					<form method="post">
+					<form method="post" action="/product">
 					  <div class="form-group font">
 					    <label for="productname" class="font">Product Name:</label>
 					    <input type="text" class="form-control font" id="productname" name="productname">
@@ -52,7 +52,7 @@
 					  
 					  <div class="form-group">
 					    <label for="quantity" class="font">Quantity:</label>
-					    <input type="text" class="form-control font" id="quentity" name="quantity">
+					    <input type="text" class="form-control font" id="quantity" name="quantity">
 					    <p class="text-danger">
 					    	@if($errors->has('quantity'))
 					    		{{$errors->first('quantity')}}
@@ -62,14 +62,17 @@
 					  
 					  <div class="form-group">
 					    <label for="category" class="font">Category:</label>
-					    <input type="text" class="form-control font" id="category" name="category">
+					    <select name="cat">
+					    		@foreach($categories as $cat)
+					    				<option value="{{$cat->id}}">{{$cat->categoryname}}</option>
+					    		@endforeach
+					    </select>
 					    <p class="text-danger">
 					    	@if($errors->has('category'))
 					    		{{$errors->first('category')}}
 					    	@endif
 					    </p>
 					  </div>
-
 					  <div class="form-group">
 					    <label for="image" class="font">Image 1:</label>
 					    <input type="file" class="form-control font" id="image" name="iamge1">

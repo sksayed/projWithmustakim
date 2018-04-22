@@ -12,14 +12,14 @@ class ProductController extends Controller
 {
     public function index()
     {
-    	// $products = Product::all();
-    	//$products->load('category');
-    	// $products = DB::table('products')
-    	// 	->join('categories', 'products.categoryId', '=', 'categories.categoryId')
-    	// 	->get();
+    	$products = Product::all();
+        //$products->load('category');
+        // $products = DB::table('products')
+        //  ->join('categories', 'products.categoryId', '=', 'categories.categoryId')
+        //  ->get();
 
-    	//dd($products);
-    	// return view('product.index', ['products' => $products]);
+        //dd($products);
+        return view('product.index', ['products' => $products]);
     }
 
     public function show($id)
@@ -38,11 +38,11 @@ class ProductController extends Controller
     public function create()
     {
     	//Category::all()
-    	// $categories = DB::table('categories')
-    	// 	->get();
+    	$categories = DB::table('categories')
+                    ->get();
 
-        // return view('product.create', ['categories' => $categories]);
-    	return view('product.create');
+        return view('product.create', ['categories' => $categories]);
+    	
     }
 
     public function edit($id)
@@ -60,14 +60,14 @@ class ProductController extends Controller
     public function store(CreateProductRequest $request)
     {
     	$p = new Product();
-    	$p->productName = $request->pname;
+    	$p->productname = $request->productname;
     	$p->price = $request->price;
     	$p->quantity = $request->quantity;
     	$p->categoryId = $request->cat;
-    	
+        $p->details = $request->details;
         $p->save();
 
-    	return redirect('/product');
+    	return redirect('/admindashboard');
     }
 
     public function update(Request $request, $id)

@@ -43,15 +43,15 @@ Route::get('/logout', 'LogoutController@index')->name('logout');
 // Route::put('/category/{id}', 'CategoryController@update');
 // Route::delete('/category/{id}', 'CategoryController@destroy');
 
-// Route::get('/product', 'ProductController@index');
+Route::get('/product', 'ProductController@index')->name('product.index');
 Route::get('/product/create', 'ProductController@create')->name('product.create');
 Route::get('/product/{id}', 'ProductController@show');
-// Route::get('/product/{id}/edit', 'ProductController@edit');
-// Route::get('/product/{id}/delete', 'ProductController@delete');
-// Route::post('/product', 'ProductController@store');
-// Route::post('/product/search', 'ProductController@search');
-// Route::put('/product/{id}', 'ProductController@update');
-// Route::delete('/product/{id}', 'ProductController@destroy');
+Route::get('/product/{id}/edit', 'ProductController@edit');
+Route::get('/product/{id}/delete', 'ProductController@delete');
+Route::post('/product', 'ProductController@store');
+Route::post('/product/search', 'ProductController@search');
+Route::put('/product/{id}', 'ProductController@update');
+Route::delete('/product/{id}', 'ProductController@destroy');
 
 //Route::resource('/supplier', 'SupplierController');
 //Route::get('/supplier/{id}/delete', 'SupplierController@delete');

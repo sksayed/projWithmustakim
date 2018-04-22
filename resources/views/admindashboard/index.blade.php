@@ -26,7 +26,7 @@
 	  </div>
 	  <div class="well">
 	  	<h2 class="text-left">
-	  		<a href="{{route('product.create')}}">All Product</a>
+	  		<a href="{{route('product.index')}}">All Product</a>
 	  	</h2>
 	  </div>
 	  <div class="well">
