@@ -24,11 +24,11 @@
 		</tr>
 		@foreach($products as $product)
 			<tr>
-				<td>{{$product->productId}}</td>
-				<td>{{$product->productName}}</td>
+				<td>{{$product->id}}</td>
+				<td>{{$product->productname}}</td>
 				<td>{{$product->price}}</td>
 				<td>{{$product->quantity}}</td>
-				<td>{{$product->category->categoryName}}</td>
+				<td>{{$product->catagoryId}}</td>
 				<td>
 					<a href="/product/{{$product->productId}}">Details</a> | 
 					<a href="/product/{{$product->productId}}/edit">Edit</a> | 
