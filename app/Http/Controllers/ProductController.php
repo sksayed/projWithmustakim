@@ -67,13 +67,13 @@ class ProductController extends Controller
         $p->details = $request->details;
         $p->save();
 
-    	return redirect('/admindashboard');
+    	return redirect('/product');
     }
 
     public function update(Request $request, $id)
     {
     	$p = Product::find($id);
-    	$p->productName = $request->pname;
+    	$p->productname = $request->pname;
     	$p->price = $request->price;
     	$p->quantity = $request->quantity;
     	$p->categoryId = $request->cat;

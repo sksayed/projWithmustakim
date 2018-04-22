@@ -16,7 +16,7 @@
 			</tr>
 			<tr>
 				<td>PRODUCT NAME:</td>
-				<td><input type="text" name="pname" value="{{$product->productName}}"></td>
+				<td><input type="text" name="pname" value="{{$product->name}}"></td>
 			</tr>
 			<tr>
 				<td>PRICE:</td>
