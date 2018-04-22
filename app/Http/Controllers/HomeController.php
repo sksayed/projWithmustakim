@@ -13,6 +13,8 @@ class HomeController extends Controller
             ->join('categories', 'products.categoryId', '=', 'categories.id')
             ->select('products.*', 'categories.categoryname')
             ->get();
-        return view('home.index', ['products' => $products]);  	
+        $categories=DB::table('categories')
+        	->get();
+        return view('home.index', ['products' => $products,'categories'=>$categories]);  	
     }
 }

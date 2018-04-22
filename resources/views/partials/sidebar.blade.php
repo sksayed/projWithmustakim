@@ -12,10 +12,9 @@
 	        <li class="dropdown my-dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Select Product <span class="caret text-right"></span></a>
 	          <ul class="dropdown-menu">
-	            <li><a href="/index/catagorysearch/Men">Men</a></li>
-	            <li><a href="/index/catagorysearch/Women">Women</a></li>
-	            <li><a href="/index/catagorysearch/Food">Food</a></li>
-	            <li><a href="/index/catagorysearch/Electronics">Electronics</a></li>
+	          	@foreach($categories as $c)
+	          		<li><a href="/index/catagorysearch/{{$c->categoryname}}">{{$c->categoryname}}</a></li>
+	          	@endforeach
 	          </ul>
 	        </li>
 	      </ul>

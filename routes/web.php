@@ -58,3 +58,8 @@ Route::get('/product/{id}', 'ProductController@show');
 
 Route::get('/cart','CartController@index')->name('cart.index');
 Route::post('/cart/addtocart','CartController@addtocart');
+Route::get('/cart/removefromcart/{rowid}','CartController@destroy');
+
+
+Route::get('/checkout','CheckoutController@index')->name('checkout.index');
+Route::post('/checkout','CheckoutController@store')->name('checkout.store');

@@ -16,17 +16,11 @@ class CartController extends Controller
 
         return view('cart.index',['cartProducts'=> $cartProducts]);
     }
-
-    public function update(Request $request, $id)
+    public function destroy($rowId)
     {
-        //
+        Cart::remove($rowId);
+        return redirect('/cart');
     }
-
-    public function destroy($id)
-    {
-        //
-    }
-
     public function addtocart(Request $request)
     {
         $productId=$request->id;
