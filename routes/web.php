@@ -33,8 +33,6 @@ Route::get('/admindashboard', 'AdminDashboardController@index')->name('admindash
 Route::get('/logout', 'LogoutController@index')->name('logout');
 
 
-
-
 // Route::get('/category', 'CategoryController@index');
 // Route::get('/category/create', 'CategoryController@create');
 // Route::get('/category/{id}', 'CategoryController@show');
@@ -54,8 +52,6 @@ Route::get('/product/{id}', 'ProductController@show');
 // Route::post('/product/search', 'ProductController@search');
 // Route::put('/product/{id}', 'ProductController@update');
 // Route::delete('/product/{id}', 'ProductController@destroy');
-
-
 
 //Route::resource('/supplier', 'SupplierController');
 //Route::get('/supplier/{id}/delete', 'SupplierController@delete');
