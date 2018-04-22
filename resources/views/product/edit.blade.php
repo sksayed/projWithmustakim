@@ -7,16 +7,16 @@
 	<h2>Edit Product</h2>
 	<a href="/product">Back to List</a>
 	<br/><br/>
-	<form method="post" action="/product/{{$product->productId}}">
+	<form method="post" action="/product/{{$product->id}}">
 		<input type="hidden" name="_method" value="put">
 		<table>
 			<tr>
 				<td>PRODUCT ID:</td>
-				<td>{{$product->productId}}</td>
+				<td>{{$product->id}}</td>
 			</tr>
 			<tr>
 				<td>PRODUCT NAME:</td>
-				<td><input type="text" name="pname" value="{{$product->name}}"></td>
+				<td><input type="text" name="pname" value="{{$product->productname}}"></td>
 			</tr>
 			<tr>
 				<td>PRICE:</td>

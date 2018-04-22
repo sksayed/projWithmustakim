@@ -49,8 +49,9 @@ class ProductController extends Controller
 
     public function edit($id)
     {
-    	$product = Product::find($id);
+    	$product = DB::table('products')->find($id);
     	return view('product.edit', ['product' => $product]);
+
     }
 
     public function delete($id)
@@ -75,12 +76,12 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
     	$p = Product::find($id);
-    	$p->productname = $request->pname;
-    	$p->price = $request->price;
-    	$p->quantity = $request->quantity;
-    	$p->categoryId = $request->cat;
-    	$p->save();
-    	return redirect('/product');
+        $p->productName = $request->pname;
+        $p->price = $request->price;
+        $p->quantity = $request->quantity;
+        $p->categoryId = $request->cat;
+        $p->save();
+        return redirect('/product');
     }
 
     public function destroy($id)
