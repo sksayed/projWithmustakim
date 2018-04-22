@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+	<title>Cart</title>
 	@include('partials.head')
 	<style>
     table {
@@ -76,7 +76,7 @@
                         $price=($cp->qty*$cp->price);
                        ?>
                       <td>BDT {{$price}}</td>
-                      <td> <a href="/cart/removecart"><i class="glyphicon glyphicon-remove"></i></a></td>  
+                      <td> <a href="/cart/removefromcart/{{$cp->rowId}}"><i class="glyphicon glyphicon-remove"></i></a></td>  
                     </tr>
                     <?php  
                         $subtotal+=$price;
@@ -100,8 +100,8 @@
                 <th>BDT {{$total}}</th>
             </tr>
             <tr>
-                <td><a href="/index" class="btn btn-primary">Continue Shopping</a></td>
-                <td colspan="3"><a href="/checkout" class="pull-right btn btn-success">Checkout</a></td>
+                <td><a href="/home" class="btn btn-primary">Continue Shopping</a></td>
+                <td colspan="3"><a href="{{route('checkout.index')}}" class="pull-right btn btn-success">Checkout</a></td>
             </tr>
         </tbody>
     </table>          

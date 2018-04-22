@@ -28,11 +28,13 @@ class ProductController extends Controller
         $product=DB::table('products')
             ->join('categories', 'products.categoryId', '=', 'categories.id')
             ->select('products.*', 'categories.categoryname')
+            ->where('products.id',$id)
             ->first();
 
     	//dd($product->category->categoryName);
 
-    	return view('product.details', ['p' => $product]);
+        return view('product.details', ['p' => $product]);
+    	// return [$product];
     }
 
     public function create()

@@ -63,6 +63,11 @@
 			    if(document.getElementById("quantity").value>{{$p->quantity}})
 			    {
 			    	window.alert('We do not have sock as much you want');
+			    	document.getElementById('addtocart').disabled=true;
+			    }
+			    else
+			    {
+			    	document.getElementById('addtocart').disabled=false;
 			    }
 			}
 			</script>
