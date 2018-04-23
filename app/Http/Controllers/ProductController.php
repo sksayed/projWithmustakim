@@ -112,15 +112,17 @@ class ProductController extends Controller
 
     public function destroy($id)
     {
-    	$p = Product::find($id);
-    	$p->delete();
+    	/*$p = Product::find($id);
+    	$p->delete();*/
 
-    	return redirect('/product');
+        //DB::table('products')->truncate($id);
+
+    	return redirect('/admindashboard');
     }
 
     public function search(Request $request)
     {
-    	$products = Product::where('productName', 'LIKE', "%$request->searchText%")
+    	$products = Product::where('productname', 'LIKE', "%$request->searchText%")
 			->get();
 
 		return view('product.index', ['products' => $products]);
