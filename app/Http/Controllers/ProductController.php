@@ -88,13 +88,26 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
-    	$p = Product::find($id);
+    	/*$p = Product::find($id);
         $p->productName = $request->pname;
         $p->price = $request->price;
         $p->quantity = $request->quantity;
         $p->categoryId = $request->cat;
         $p->save();
-        return redirect('/product');
+        return redirect('/product');*/
+
+        $params = [
+            'productname'=>$request->pname,
+            'price'=>$request->price,
+            'quantity'=>$request->quantity,
+            'categoryId'=>$request->cat,
+            'details'=>$request->details
+        ];
+        DB::table('products')
+            ->where('id', $id)
+            ->update($params);
+
+        return redirect('/admindashboard');
     }
 
     public function destroy($id)

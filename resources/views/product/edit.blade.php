@@ -31,6 +31,10 @@
 				<td><input type="text" name="cat" value="{{$product->categoryId}}"></td>
 			</tr>
 			<tr>
+				<td>DETAILS:</td>
+				<td><input type="text" name="details" value="{{$product->details}}"></td>
+			</tr>
+			<tr>
 				<td></td>
 				<td><input type="submit" value="Update"></td>
 			</tr>

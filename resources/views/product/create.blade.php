@@ -29,7 +29,7 @@
 	                			<label>{{session('message')}}</label>
 	                		</div>
 	                @endif
-					<form method="post" action="/product/store">
+					<form method="post" action="/product">
 					  <div class="form-group font">
 					    <label for="productname" class="font">Product Name:</label>
 					    <input type="text" class="form-control font" id="productname" name="productname">
