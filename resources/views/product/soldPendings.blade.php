@@ -14,15 +14,15 @@
 	<br/>
 	<table border="1">
 		<tr>
-			<th>Id</th>
-			<th>PRODUCT ID</th>
-			<th>USER ID</th>
+			<th>ID</th>
+			<th>PRODUCT NAME</th>
 			<th>USERNAME</th>
 			<th>QUANTITY</th>
 			<th>PRICE</th>
 			<th>PHONE NUMBER</th>
 			<th>ADDRESS</th>
 			<th>ZIP CODE</th>
+			<th>DELIVERY STATUS</th>
 			<th>ORDER DATE</th>
 		</tr>
 		<?php 
@@ -32,9 +32,7 @@
 		@foreach($soldproduct as $soldp)
 			<tr>
 				<td>{{$soldp->id}}</td>
-				<td>{{$soldp->productid}}</td>
 				<td>{{$soldp->productname}}</td>
-				<td>{{$soldp->userid}}</td>
 				<td>{{$soldp->username}}</td>
 				<td>{{$soldp->quantity}}</td>
 				<td>{{$soldp->price}}</td>
@@ -50,8 +48,6 @@
 			</tr>
 		@endforeach
 		<tr>
-			<th></th>
-			<th></th>
 			<th></th>
 			<th></th>
 			<th></th>

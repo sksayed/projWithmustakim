@@ -45,6 +45,10 @@ Route::post('/category', 'CategoryController@store');
 
 Route::get('/product', 'ProductController@index')->name('product.index');
 Route::get('/product/create', 'ProductController@create')->name('product.create');
+Route::get('/product/productSold', 'ProductController@productSold')->name('product.productSold');
+Route::get('/product/soldPendings', 'ProductController@soldPendings')->name('product.soldPendings');
+Route::post('/product/searchSoldproduct', 'ProductController@searchSoldproduct');
+Route::post('/product/searchByCatagorySoldproduct', 'ProductController@searchByCatagorySoldproduct');
 Route::get('/product/{id}', 'ProductController@show');
 Route::get('/product/{id}/edit', 'ProductController@edit');
 Route::get('/product/{id}/delete', 'ProductController@delete');
@@ -52,8 +56,6 @@ Route::post('/product', 'ProductController@store');
 Route::post('/product/search', 'ProductController@search');
 Route::put('/product/{id}', 'ProductController@update');
 Route::delete('/product/{id}', 'ProductController@destroy');
-Route::get('/product/sold', 'ProductController@sold')->name('product.sold');
-
 //Route::resource('/supplier', 'SupplierController');
 //Route::get('/supplier/{id}/delete', 'SupplierController@delete');
 

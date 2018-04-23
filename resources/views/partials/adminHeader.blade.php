@@ -18,7 +18,8 @@
         <li class="active"><a href="{{route('product.index')}}">All Product </a></li>
         <li><a href="/admindashboard/addadmin">Add Admin </a></li>
 		<li><a href="/admindashboard/userlist">Users </a></li>
-    <li><a href="/admindashboard/soldpendings">Sold Pendings</a></li>
+    <li><a href="/product/soldPendings">Sold Pendings</a></li>
+    <li><a href="/product/productSold">Sold product</a></li>
 
     <form method="post" action="/admindashboard/search" class="navbar-form navbar-left">
       <div class="form-group">

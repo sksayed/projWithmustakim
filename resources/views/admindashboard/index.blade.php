@@ -41,7 +41,12 @@
 	  </div>
 	  <div class="well">
 	  	<h2 class="text-left">
-	  		<a href="/product/sold">Sold Pending</a>
+	  		<a href="{{route('product.soldPendings')}}">Sold Pending</a>
+	  	</h2>
+	  </div>
+	  <div class="well">
+	  	<h2 class="text-left">
+	  		<a href="{{route('product.productSold')}}">Sold Product</a>
 	  	</h2>
 	  </div>
 	</div>

@@ -21,7 +21,6 @@ class ProductController extends Controller
         //dd($products);
         return view('product.index', ['products' => $products]);
     }
-
     public function show($id)
     {
     	// $product = Product::find($id);
@@ -127,14 +126,42 @@ class ProductController extends Controller
 
 		return view('product.index', ['products' => $products]);
     }
-    public function sold()
+       public function productSold()
     {
         //$products = Product::all();
         
         $soldproduct = DB::table('soldproduct')
+         ->where('delivery','yes')
          ->get();
 
         //dd($products);
-        return view('product.sold', ['soldproduct' => $soldproduct]);
+        return view('product.productSold', ['soldproduct' => $soldproduct]);
+    }
+     public function soldPendings()
+    {
+        //$products = Product::all();
+        
+        $soldproduct = DB::table('soldproduct')
+         ->where('delivery','no')
+         ->get();
+
+        //dd($products);
+        return view('product.productSold', ['soldproduct' => $soldproduct]);
+    }
+    public function searchSoldproduct(Request $request)
+    {
+            $soldproduct = DB::table('soldproduct')
+                ->where('productname', 'LIKE', "%$request->searchText%")
+                ->get();
+            
+        return view('product.productSold', ['soldproduct' => $soldproduct]);
+    }
+    public function searchByCatagorySoldproduct(Request $request)
+    {
+            $soldproduct = DB::table('soldproduct')
+                ->where('category', 'LIKE', "$request->cat")
+                ->get();
+            
+        return view('product.productSold', ['soldproduct' => $soldproduct]);
     }
 }
