@@ -24,7 +24,7 @@ class AdminDashboardController extends Controller
      */
     public function create()
     {
-        
+        return view('admindashboard.create');
     }
 
     /**
@@ -35,7 +35,22 @@ class AdminDashboardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $params = [
+            'name' => $request->name,
+            'username' => $request->username,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'password' => $request->password,
+            'gender' => $request->gender,
+            'dob' => $request->dob,
+            'nid' => $request->nid,
+            'presentaddress' => $request->presentaddress,
+            'parmanentaddress' => $request->parmanentaddress
+        ];
+        DB::table('admins')
+            ->insert($params);
+
+        return redirect('/admindashboard');
     }
 
     /**

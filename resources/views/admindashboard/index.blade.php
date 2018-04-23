@@ -31,7 +31,7 @@
 	  </div>
 	  <div class="well">
 	  	<h2 class="text-left">
-	  		<a href="{{route('product.create')}}">Add Admin</a>
+	  		<a href="{{route('admindashboard.create')}}">Add Admin</a>
 	  	</h2>
 	  </div>
 	  <div class="well">

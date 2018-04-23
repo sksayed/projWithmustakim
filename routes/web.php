@@ -28,6 +28,8 @@ Route::get('/adminlogin', 'AdminLoginController@index')->name('adminlogin.index'
 Route::post('/adminlogin', 'AdminLoginController@verify');
 
 Route::get('/admindashboard', 'AdminDashboardController@index')->name('admindashboard');
+Route::get('/admindashboard/create', 'AdminDashboardController@create')->name('admindashboard.create');
+Route::post('/admindashboard', 'AdminDashboardController@store');
 
 Route::get('/logout', 'LogoutController@index')->name('logout');
 
