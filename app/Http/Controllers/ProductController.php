@@ -61,15 +61,31 @@ class ProductController extends Controller
 
     public function store(CreateProductRequest $request)
     {
-    	$p = new Product();
-    	$p->productname = $request->productname;
-    	$p->price = $request->price;
-    	$p->quantity = $request->quantity;
-    	$p->categoryId = $request->cat;
-        $p->details = $request->details;
-        $p->save();
 
-    	return redirect('/admindashboard');
+
+    	$params=[
+            'productname'=>$request->productname,
+            'price'=>$request->price,
+            'quantity'=>$request->quantity,
+            'categoryId'=>$request->cat,
+            'details'=>$request->details
+        ];
+
+        $product=DB::table('products')
+            ->insert($params);
+
+    	 if($product)
+                 {
+                     // $request->session()->put('user', $user);
+                     return redirect('/admindashboard');
+                 }
+                 else
+                 {
+                     // $request->session()->flash('message', 'Invalid username or password');
+                     // $request->session()->forget('message');
+                     $request->session()->flush();
+                     return redirect()->back();
+                 }
     }
 
     public function update(Request $request, $id)
