@@ -36,7 +36,8 @@
         <button type="submit" id="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{route('cart.index')}}"><i class="glyphicon glyphicon-shopping-cart"></i> Cart</a></li>
+        
+        <li><a href="{{route('cart.index')}}"><i class="glyphicon glyphicon-shopping-cart"></i> Cart({{count(session()->get('c'))}})</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
           <ul class="dropdown-menu">

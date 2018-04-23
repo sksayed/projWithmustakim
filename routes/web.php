@@ -29,9 +29,7 @@ Route::post('/adminlogin', 'AdminLoginController@verify');
 
 Route::get('/admindashboard', 'AdminDashboardController@index')->name('admindashboard');
 
-
 Route::get('/logout', 'LogoutController@index')->name('logout');
-
 
 Route::get('/category', 'CategoryController@index');
 Route::get('/category/create', 'CategoryController@create');

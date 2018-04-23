@@ -49,7 +49,7 @@
 	                        		        <input type="hidden" name="productid" value="{{$cp->id}}">
 	                        		        <input type="hidden" name="quantity" value="{{$cp->qty}}">
 	                        		        <input type="hidden" name="productname" value="{{$cp->productname}}">
-	                        		        <div class="col-xs-12"><strong>{{$cp->productname}}</strong></div>
+	                        		        <div class="col-xs-12"><strong>{{$cp->name}}</strong></div>
 	                        		        <div class="col-xs-12"><small><strong>Quantity:<span> {{$cp->qty}}</span></strong></small></div>
 	                        		    </div>
 	                        		    <div class="col-sm-3 col-xs-3 text-right">
@@ -108,8 +108,9 @@
 	                            </div>
 	                            <div class="form-group">
 	                                <div class="col-md-12 col-xs-12">
+	                                	<input type="hidden" name="userid" value="{{$user->id}}">
 	                                    <strong>Full Name:</strong>
-	                                    <input type="text" name="first_name" class="form-control" value="{{$user->name}}" />
+	                                    <input type="text" name="name" class="form-control" value="{{$user->name}}" />
 	                                </div>
 	                            </div>
 	                            <div class="form-group">
