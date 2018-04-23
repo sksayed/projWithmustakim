@@ -15,7 +15,7 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="{{route('admindashboard')}}">Home<span class="sr-only">(current)</span></a></li>
         <li class="active"><a href="{{route('product.create')}}">Add Product<span class="sr-only">(current)</span></a></li>
-        <li><a href="{{route('product.create')}}">All Product </a></li>
+        <li class="active"><a href="{{route('product.index')}}">All Product </a></li>
         <li><a href="/admindashboard/addadmin">Add Admin </a></li>
 		<li><a href="/admindashboard/userlist">Users </a></li>
     <li><a href="/admindashboard/soldpendings">Sold Pendings</a></li>

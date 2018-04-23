@@ -49,8 +49,9 @@ class ProductController extends Controller
 
     public function edit($id)
     {
-    	$product = Product::find($id);
+    	$product = DB::table('products')->find($id);
     	return view('product.edit', ['product' => $product]);
+
     }
 
     public function delete($id)
@@ -61,8 +62,6 @@ class ProductController extends Controller
 
     public function store(CreateProductRequest $request)
     {
-
-
     	$params=[
             'productname'=>$request->productname,
             'price'=>$request->price,
@@ -76,14 +75,13 @@ class ProductController extends Controller
 
     	 if($product)
                  {
-                     // $request->session()->put('user', $user);
                      return redirect('/admindashboard');
                  }
                  else
                  {
-                     // $request->session()->flash('message', 'Invalid username or password');
+                     $request->session()->flash('message', 'Invalid input');
                      // $request->session()->forget('message');
-                     $request->session()->flush();
+                     // $request->session()->flush();
                      return redirect()->back();
                  }
     }
@@ -91,12 +89,12 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
     	$p = Product::find($id);
-    	$p->productName = $request->pname;
-    	$p->price = $request->price;
-    	$p->quantity = $request->quantity;
-    	$p->categoryId = $request->cat;
-    	$p->save();
-    	return redirect('/product');
+        $p->productName = $request->pname;
+        $p->price = $request->price;
+        $p->quantity = $request->quantity;
+        $p->categoryId = $request->cat;
+        $p->save();
+        return redirect('/product');
     }
 
     public function destroy($id)

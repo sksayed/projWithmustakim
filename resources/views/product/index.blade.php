@@ -30,9 +30,8 @@
 				<td>{{$product->quantity}}</td>
 				<td>{{$product->catagoryId}}</td>
 				<td>
-					<a href="/product/{{$product->productId}}">Details</a> | 
-					<a href="/product/{{$product->productId}}/edit">Edit</a> | 
-					<a href="/product/{{$product->productId}}/delete">Delete</a>
+					<a href="/product/{{$product->id}}/edit">Edit</a> | 
+					<a href="/product/{{$product->id}}/delete">Delete</a>
 				</td>
 			</tr>
 		@endforeach
