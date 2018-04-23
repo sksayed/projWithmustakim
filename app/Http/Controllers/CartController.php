@@ -10,9 +10,12 @@ use Cart;
 class CartController extends Controller
 {
     
-    public function index()
+    public function index(Request $request)
     {
         $cartProducts=Cart::Content();
+
+        // return [$cartProducts];
+        $request->session()->put('c', $cartProducts);
 
         return view('cart.index',['cartProducts'=> $cartProducts]);
     }
