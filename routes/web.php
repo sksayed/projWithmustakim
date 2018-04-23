@@ -33,12 +33,12 @@ Route::get('/admindashboard', 'AdminDashboardController@index')->name('admindash
 Route::get('/logout', 'LogoutController@index')->name('logout');
 
 
-// Route::get('/category', 'CategoryController@index');
-// Route::get('/category/create', 'CategoryController@create');
+Route::get('/category', 'CategoryController@index');
+Route::get('/category/create', 'CategoryController@create');
 // Route::get('/category/{id}', 'CategoryController@show');
 // Route::get('/category/{id}/edit', 'CategoryController@edit');
 // Route::get('/category/{id}/delete', 'CategoryController@delete');
-// Route::post('/category', 'CategoryController@store');
+Route::post('/category', 'CategoryController@store');
 // Route::post('/category/search', 'CategoryController@search');
 // Route::put('/category/{id}', 'CategoryController@update');
 // Route::delete('/category/{id}', 'CategoryController@destroy');

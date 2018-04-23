@@ -24,7 +24,7 @@ class CreateProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'pname' => 'required|alpha_num|max:10',
+            'productname' => 'required|alpha_num|max:10',
             'price' => 'required|numeric|min:0',
             'quantity' => 'required|numeric|min:1'
         ];
@@ -33,8 +33,13 @@ class CreateProductRequest extends FormRequest
     public function messages()
     {
         return [
-            'pname.required' => 'Product name is required',
-            'price.required' => 'You must enter a price'
+            'productname.required' => 'Product name is required',
+            'price.required' => 'You must enter a price',
+            'price.required' => 'Price should min 1',
+            'price.numeric' => 'Price must be a number',
+            'quantity.numeric' => 'Quantity must be a number',
+            'quantity.required' => 'Quantity should min 1',
+            'quantity.required' => 'You must enter valid quantity'
         ];
     }
 }
