@@ -22,6 +22,10 @@
 			<th>CATEGORY</th>
 			<th>OPTION</th>
 		</tr>
+		<?php 
+		      $totalPrice = 0;
+		      $totalQuantity= 0;           
+		 ?>
 		@foreach($products as $product)
 			<tr>
 				<td>{{$product->id}}</td>
@@ -29,12 +33,22 @@
 				<td>{{$product->price}}</td>
 				<td>{{$product->quantity}}</td>
 				<td>{{$product->catagoryId}}</td>
+				<?php 
+		      		$totalPrice+=$product->price; 
+		      		$totalQuantity+=$product->quantity;          
+		 		?>
 				<td>
 					<a href="/product/{{$product->id}}/edit">Edit</a> | 
 					<a href="/product/{{$product->id}}/delete">Delete</a>
 				</td>
 			</tr>
 		@endforeach
+		<tr>
+			<th></th>
+			<th></th>
+			<th>Total: {{$totalPrice}}</th>
+			<th>Total: {{$totalQuantity}}</th>
+		</tr>
 	</table>
 </body>
 </html>

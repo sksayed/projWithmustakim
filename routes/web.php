@@ -52,6 +52,7 @@ Route::post('/product', 'ProductController@store');
 Route::post('/product/search', 'ProductController@search');
 Route::put('/product/{id}', 'ProductController@update');
 Route::delete('/product/{id}', 'ProductController@destroy');
+Route::get('/product/sold', 'ProductController@sold')->name('product.sold');
 
 //Route::resource('/supplier', 'SupplierController');
 //Route::get('/supplier/{id}/delete', 'SupplierController@delete');

@@ -127,4 +127,14 @@ class ProductController extends Controller
 
 		return view('product.index', ['products' => $products]);
     }
+    public function sold()
+    {
+        //$products = Product::all();
+        
+        $soldproduct = DB::table('soldproduct')
+         ->get();
+
+        //dd($products);
+        return view('product.sold', ['soldproduct' => $soldproduct]);
+    }
 }

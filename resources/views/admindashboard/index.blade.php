@@ -41,7 +41,7 @@
 	  </div>
 	  <div class="well">
 	  	<h2 class="text-left">
-	  		<a href="{{route('product.create')}}">Sold Pending</a>
+	  		<a href="/product/sold">Sold Pending</a>
 	  	</h2>
 	  </div>
 	</div>
