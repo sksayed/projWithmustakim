@@ -62,14 +62,26 @@ class ProductController extends Controller
 
     public function store(CreateProductRequest $request)
     {
-    	$p = new Product();
+    	/*$p = new Product();
     	$p->productname = $request->productname;
     	$p->price = $request->price;
     	$p->quantity = $request->quantity;
     	$p->categoryId = $request->cat;
         $p->details = $request->details;
-        $p->save();
 
+        DB::table('products')->insert($p);*/
+
+        $params = [
+            'productname' => $request->productname,
+            'price' => $request->price,
+            'quantity' => $request->quantity,
+            'categoryId' => $request->categoryId,
+            'price' => $request->price,
+            'details' => $request->details
+             ];
+        DB::table('products')
+            ->insert($params);
+            
     	return redirect('/product');
     }
 

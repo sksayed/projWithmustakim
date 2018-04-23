@@ -48,7 +48,7 @@ Route::get('/product/create', 'ProductController@create')->name('product.create'
 Route::get('/product/{id}', 'ProductController@show');
 Route::get('/product/{id}/edit', 'ProductController@edit');
 Route::get('/product/{id}/delete', 'ProductController@delete');
-Route::post('/product', 'ProductController@store');
+Route::post('/product/store', 'ProductController@store');
 Route::post('/product/search', 'ProductController@search');
 Route::put('/product/{id}', 'ProductController@update');
 Route::delete('/product/{id}', 'ProductController@destroy');
