@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2018 at 05:35 PM
+-- Generation Time: Apr 25, 2018 at 09:00 PM
 -- Server version: 10.1.24-MariaDB
 -- PHP Version: 7.1.6
 
@@ -94,7 +94,8 @@ INSERT INTO `orders` (`orderId`, `customerId`) VALUES
 (123473, 36),
 (123474, 36),
 (123475, 36),
-(123476, 36);
+(123476, 36),
+(123477, 36);
 
 -- --------------------------------------------------------
 
@@ -112,20 +113,21 @@ CREATE TABLE `products` (
   `image2` varchar(256) DEFAULT NULL,
   `image3` varchar(256) DEFAULT NULL,
   `details` varchar(8192) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `rank` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `productname`, `price`, `quantity`, `categoryId`, `image1`, `image2`, `image3`, `details`, `date`) VALUES
-(10, 'Men\'s Printed Panjabi', 1995, 1800, 1, NULL, NULL, NULL, 'New COllection', '0000-00-00 00:00:00'),
-(11, 'Women Pant', 3000, 1305, 2, NULL, NULL, NULL, 'New Collection', '2018-03-19 06:16:11'),
-(12, 'iPhone', 100000, 893, 4, NULL, NULL, NULL, 'New Collection', '2018-03-19 06:17:03'),
-(13, 'Biskut', 20, 2395, 3, NULL, NULL, NULL, 'Nice Biskut', '2018-03-19 06:17:49'),
-(14, 'Women Shirt', 2500, 1905, 2, NULL, NULL, NULL, 'Nice\r\n', '2018-03-19 06:18:29'),
-(15, 'Mobile', 2000, 5, 1, NULL, NULL, NULL, 'asdfghjk', '2018-04-23 05:54:40');
+INSERT INTO `products` (`id`, `productname`, `price`, `quantity`, `categoryId`, `image1`, `image2`, `image3`, `details`, `date`, `rank`) VALUES
+(10, 'Men\'s Printed Panjabi', 1995, 1800, 1, NULL, NULL, NULL, 'New COllection', '0000-00-00 00:00:00', 2),
+(11, 'Women Pant', 3000, 1305, 2, NULL, NULL, NULL, 'New Collection', '2018-03-19 06:16:11', 3),
+(12, 'iPhone', 100000, 893, 4, NULL, NULL, NULL, 'New Collection', '2018-03-19 06:17:03', 1),
+(13, 'Biskut', 20, 2395, 3, NULL, NULL, NULL, 'Nice Biskut', '2018-03-19 06:17:49', 1),
+(14, 'Women Shirt', 2500, 1905, 2, NULL, NULL, NULL, 'Nice\r\n', '2018-03-19 06:18:29', 7),
+(15, 'Mobile', 2000, 4, 1, NULL, NULL, NULL, 'asdfghjk', '2018-04-23 05:54:40', 5);
 
 -- --------------------------------------------------------
 
@@ -162,7 +164,8 @@ INSERT INTO `soldproduct` (`id`, `productid`, `productname`, `categoryId`, `orde
 (123465, 10, 'Men\'s Printed Panjabi', 1, 123473, 'noyon', 1, 1995, '01733844422', 'Dhaka', '1229', 'no', '2018-04-25 21:04:02'),
 (123466, 15, 'Mobile', 1, 123473, 'noyon', 1, 2000, '01733844422', 'Dhaka', '1229', 'no', '2018-04-25 21:04:03'),
 (123467, 11, 'Women Pant', 2, 123475, 'noyon', 95, 285000, '01733844422', 'Dhaka', '1229', 'no', '2018-04-25 21:31:49'),
-(123468, 10, 'Men\'s Printed Panjabi', 1, 123476, 'noyon', 70, 139650, '01733844422', 'Dhaka', '1229', 'no', '2018-04-25 21:33:18');
+(123468, 10, 'Men\'s Printed Panjabi', 1, 123476, 'noyon', 70, 139650, '01733844422', 'Dhaka', '1229', 'no', '2018-04-25 21:33:18'),
+(123469, 15, 'Mobile', 1, 123477, 'noyon', 1, 2000, '01733844422', 'Dhaka', '1229', 'no', '2018-04-25 22:14:39');
 
 -- --------------------------------------------------------
 
@@ -251,7 +254,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `orderId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123477;
+  MODIFY `orderId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123478;
 --
 -- AUTO_INCREMENT for table `products`
 --
@@ -261,7 +264,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `soldproduct`
 --
 ALTER TABLE `soldproduct`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123469;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123470;
 --
 -- AUTO_INCREMENT for table `users`
 --
