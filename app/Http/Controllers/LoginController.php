@@ -28,7 +28,7 @@ class LoginController extends Controller
             $request->session()->put('user', $user);
     		$request->session()->put('role', "user");
     		// session('user', $user);
-            return redirect('/home');
+            return redirect('/user/userProfile');
     	}
     	else
     	{

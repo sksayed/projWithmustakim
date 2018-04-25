@@ -30,6 +30,10 @@ class ProductController extends Controller
             ->where('products.id',$id)
             ->first();
 
+        DB::table('products')
+            ->where('id',$id)
+            ->increment('rank', 1);
+
     	//dd($product->category->categoryName);
 
         return view('product.details', ['p' => $product]);

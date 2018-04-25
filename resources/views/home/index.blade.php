@@ -20,10 +20,10 @@
 						@foreach($products as $product)
 							<a href="/product/{{$product->id}}">
 								<figure>
-								  <img src="https://i.imgur.com/ruU04I6.jpg" alt='Hello Moni'>
-									<figcaption>{{$product->productname}}</figcaption>
-									<p>{{$product->categoryname}}</p>
-								    <span class="price">{{$product->price}}</span>
+								  <img src="{{asset('images/product.jpg')}}" alt="Hello Moni">
+									<figcaption class="fig-pro">{{$product->productname}}</figcaption>
+									<p><small>Category: </small>{{$product->categoryname}}</p>
+								    <span class="price">BDT {{$product->price}}</span>
 							    	<a href="/product/{{$product->id}}" class="button" type="submit">Buy Now</a> 
 								</figure>
 							</a>

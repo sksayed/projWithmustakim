@@ -48,25 +48,24 @@ class CheckoutController extends Controller
     			'address'=>$request->address,
     			'zipcode'=>$request->zip_code
     		];
-            // $mainQuantity=DB::table('products')
-            //     ->where('id',$cp->id)
-            //     ->value('quantity');
-
-            // $mainQuantity-=$cp->qty;
-            // $quantity=[
-            //     'quantity'=>$mainQuantity;
-            // ];
+            //Quantity Decrement
             DB::table('products')
                 ->where('id',$cp->id)
                 ->decrement('quantity', $cp->qty);
-                
+            
+            //Increment Rank
+            DB::table('products')
+                ->where('id',$cp->id)
+                ->increment('rank', 3);
 
+            //Product insert in Sold product from CHeckout
     		DB::table('soldproduct')
     			->insert($params);
+            //Remove product from Cart
     		Cart::remove($cp->rowId);
     	}
-
-    	return view('checkout.thanks');
+    	
+        return view('checkout.thanks');
     	// return $a;
     }
 }
