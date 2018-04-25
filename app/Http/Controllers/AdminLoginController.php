@@ -27,11 +27,10 @@ class AdminLoginController extends Controller
             ->where('username', $request->username)
             ->where('password', $request->password)
             ->value('username');
-        $role='admin';
         if($admin)
         {
             $request->session()->put('admin', $admin);
-            $request->session()->put('role', $role);
+            $request->session()->put('role', 'admin');
             // session('user', $user);
             return redirect('/admindashboard');
         }

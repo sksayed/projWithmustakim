@@ -15,7 +15,6 @@ class CartController extends Controller
         $cartProducts=Cart::Content();
 
         // return [$cartProducts];
-        $request->session()->put('c', $cartProducts);
 
         return view('cart.index',['cartProducts'=> $cartProducts]);
     }
