@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2018 at 08:04 PM
+-- Generation Time: Apr 25, 2018 at 05:35 PM
 -- Server version: 10.1.24-MariaDB
 -- PHP Version: 7.1.6
 
@@ -88,7 +88,13 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`orderId`, `customerId`) VALUES
-(123456, 30);
+(123466, 36),
+(123467, 36),
+(123472, 36),
+(123473, 36),
+(123474, 36),
+(123475, 36),
+(123476, 36);
 
 -- --------------------------------------------------------
 
@@ -114,11 +120,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `productname`, `price`, `quantity`, `categoryId`, `image1`, `image2`, `image3`, `details`, `date`) VALUES
-(10, 'Men\'s Printed Panjabi', 1995, 1965, 1, NULL, NULL, NULL, 'New COllection', '0000-00-00 00:00:00'),
-(11, 'Women Pant', 3000, 1495, 2, NULL, NULL, NULL, 'New Collection', '2018-03-19 06:16:11'),
-(12, 'iPhone', 100000, 988, 4, NULL, NULL, NULL, 'New Collection', '2018-03-19 06:17:03'),
-(13, 'Biskut', 20, 2490, 3, NULL, NULL, NULL, 'Nice Biskut', '2018-03-19 06:17:49'),
-(14, 'Women Shirt', 2500, 2000, 2, NULL, NULL, NULL, 'Nice\r\n', '2018-03-19 06:18:29');
+(10, 'Men\'s Printed Panjabi', 1995, 1800, 1, NULL, NULL, NULL, 'New COllection', '0000-00-00 00:00:00'),
+(11, 'Women Pant', 3000, 1305, 2, NULL, NULL, NULL, 'New Collection', '2018-03-19 06:16:11'),
+(12, 'iPhone', 100000, 893, 4, NULL, NULL, NULL, 'New Collection', '2018-03-19 06:17:03'),
+(13, 'Biskut', 20, 2395, 3, NULL, NULL, NULL, 'Nice Biskut', '2018-03-19 06:17:49'),
+(14, 'Women Shirt', 2500, 1905, 2, NULL, NULL, NULL, 'Nice\r\n', '2018-03-19 06:18:29'),
+(15, 'Mobile', 2000, 5, 1, NULL, NULL, NULL, 'asdfghjk', '2018-04-23 05:54:40');
 
 -- --------------------------------------------------------
 
@@ -130,6 +137,7 @@ CREATE TABLE `soldproduct` (
   `id` int(11) NOT NULL,
   `productid` int(11) NOT NULL,
   `productname` varchar(256) NOT NULL,
+  `categoryId` int(11) NOT NULL,
   `orderId` int(11) NOT NULL,
   `username` varchar(128) NOT NULL,
   `quantity` int(11) NOT NULL,
@@ -145,8 +153,16 @@ CREATE TABLE `soldproduct` (
 -- Dumping data for table `soldproduct`
 --
 
-INSERT INTO `soldproduct` (`id`, `productid`, `productname`, `orderId`, `username`, `quantity`, `price`, `phonenumber`, `address`, `zipcode`, `delivery`, `Orderdate`) VALUES
-(1, 10, 'Men\'s Printed Panjabi', 30, 'Md. Hasan Uzzaman', 1, 1995, '1733844422', 'Mahajon Bari,Affratpara,Chatmohar,Pabna', '1229', 'yes', '2018-03-19 12:02:08');
+INSERT INTO `soldproduct` (`id`, `productid`, `productname`, `categoryId`, `orderId`, `username`, `quantity`, `price`, `phonenumber`, `address`, `zipcode`, `delivery`, `Orderdate`) VALUES
+(123456, 10, 'Men\'s Printed Panjabi', 1, 123466, 'noyon', 1, 1995, '01733844422', 'Dhaka', '1229', 'no', '2018-04-23 15:56:55'),
+(123457, 14, 'Women Shirt', 2, 123466, 'noyon', 1, 2500, '01733844422', 'Dhaka', '1229', 'no', '2018-04-23 15:56:55'),
+(123458, 10, 'Men\'s Printed Panjabi', 1, 123467, 'noyon', 1, 1995, '01733844422', 'Dhaka', '1229', 'no', '2018-04-23 15:57:27'),
+(123459, 14, 'Women Shirt', 2, 123467, 'noyon', 1, 2500, '01733844422', 'Dhaka', '1229', 'no', '2018-04-23 15:57:27'),
+(123460, 12, 'iPhone', 4, 123468, 'noyon', 1, 100000, '01733844422', 'Dhaka', '1229', 'no', '2018-04-23 16:02:16'),
+(123465, 10, 'Men\'s Printed Panjabi', 1, 123473, 'noyon', 1, 1995, '01733844422', 'Dhaka', '1229', 'no', '2018-04-25 21:04:02'),
+(123466, 15, 'Mobile', 1, 123473, 'noyon', 1, 2000, '01733844422', 'Dhaka', '1229', 'no', '2018-04-25 21:04:03'),
+(123467, 11, 'Women Pant', 2, 123475, 'noyon', 95, 285000, '01733844422', 'Dhaka', '1229', 'no', '2018-04-25 21:31:49'),
+(123468, 10, 'Men\'s Printed Panjabi', 1, 123476, 'noyon', 70, 139650, '01733844422', 'Dhaka', '1229', 'no', '2018-04-25 21:33:18');
 
 -- --------------------------------------------------------
 
@@ -235,17 +251,17 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `orderId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123457;
+  MODIFY `orderId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123477;
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `soldproduct`
 --
 ALTER TABLE `soldproduct`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123456;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123469;
 --
 -- AUTO_INCREMENT for table `users`
 --

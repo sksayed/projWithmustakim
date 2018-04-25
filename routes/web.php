@@ -76,7 +76,6 @@ Route::post('/cart/addtocart','CartController@addtocart');
 Route::get('/cart/removefromcart/{rowid}','CartController@destroy');
 
 
-
 //User Middleware
 Route::group(['middleware' => ['usersess']], function(){
 	Route::group(['middleware' => ['cartverify']], function(){

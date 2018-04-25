@@ -28,12 +28,18 @@ class CheckoutController extends Controller
     	$orderid=DB::table('orders')
     		->insertGetId($userorder);
 
+
     	$cartproducts=CART::content();
     	foreach($cartproducts as $cp)
     	{
+            $categoryId=DB::table('products')
+                ->where('id',$cp->id)
+                ->value('categoryId');
+
     		$params=[
     			'productid'=>$cp->id,
-    			'productname'=>$cp->name,
+                'productname'=>$cp->name,
+    			'categoryId'=>$categoryId,
     			'orderId'=>$orderid,
     			'username'=>$request->name,
     			'quantity'=>$cp->qty,
@@ -42,6 +48,19 @@ class CheckoutController extends Controller
     			'address'=>$request->address,
     			'zipcode'=>$request->zip_code
     		];
+            // $mainQuantity=DB::table('products')
+            //     ->where('id',$cp->id)
+            //     ->value('quantity');
+
+            // $mainQuantity-=$cp->qty;
+            // $quantity=[
+            //     'quantity'=>$mainQuantity;
+            // ];
+            DB::table('products')
+                ->where('id',$cp->id)
+                ->decrement('quantity', $cp->qty);
+                
+
     		DB::table('soldproduct')
     			->insert($params);
     		Cart::remove($cp->rowId);
