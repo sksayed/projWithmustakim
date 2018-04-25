@@ -173,7 +173,7 @@ class ProductController extends Controller
     public function searchByCatagorySoldproduct(Request $request)
     {
             $soldproduct = DB::table('soldproduct')
-                ->where('category', 'LIKE', "$request->cat")
+                ->where('categoryId', $request->cat)
                 ->get();
             
         return view('product.productSold', ['soldproduct' => $soldproduct]);

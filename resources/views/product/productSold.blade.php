@@ -17,10 +17,10 @@
 	<form method="post" action="/product/searchByCatagorySoldproduct">
 		<label>Search by Category:</label>
 		<select name="cat">
-				<option value="Men">Men</option>
-				<option value="Women">Women</option>
-				<option value="Food">Food</option>
-				<option value="Electronics">Electronics</option>
+				<option value="1">Men</option>
+				<option value="2">Women</option>
+				<option value="3">Food</option>
+				<option value="4">Electronics</option>
 		</select>
 		<input type="submit" value="Search">
 	</form>
