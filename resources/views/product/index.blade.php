@@ -5,7 +5,7 @@
 </head>
 <body>
 	<h2>List of Products</h2>
-	<a href="/home">Back to Home</a> | 
+	<a href="/admindashboard">Back to Home</a> | 
 	<a href="/product/create">Create New</a>
 	<br/><br/>
 	<form method="post" action="/product/search">

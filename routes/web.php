@@ -15,6 +15,7 @@
 Route::get('/', function () {
     return redirect('/home');
 });
+
 //Home
 Route::get('/home', 'HomeController@index')->name('home');
 //Registration
@@ -49,7 +50,9 @@ Route::post('/category', 'CategoryController@store');
 // Route::post('/category/search', 'CategoryController@search');
 // Route::put('/category/{id}', 'CategoryController@update');
 // Route::delete('/category/{id}', 'CategoryController@destroy');
-
+//User
+Route::get('/user', 'UserController@index')->name('user.index');
+Route::post('/user/search','UserController@search');
 //Product
 
 Route::get('/product/create', 'ProductController@create')->name('product.create');

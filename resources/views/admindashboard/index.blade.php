@@ -36,7 +36,7 @@
 	  </div>
 	  <div class="well">
 	  	<h2 class="text-left">
-	  		<a href="{{route('product.create')}}">Users</a>
+	  		<a href="{{route('user.index')}}">Users</a>
 	  	</h2>
 	  </div>
 	  <div class="well">

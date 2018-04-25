@@ -5,9 +5,9 @@
 </head>
 <body>
 	<h2>List of Users</h2>
-	<a href="/home">Back to Home</a>
+	<a href="/admindashboard">Back to Home</a>
 	<br/><br/>
-	<form method="post" action="/product/search">
+	<form method="post" action="/user/search">
 		<input type="text" name="searchText">
 		<input type="submit" value="Search">
 	</form>
@@ -25,11 +25,6 @@
 				<td>{{$user->username}}</td>
 				<td>{{$user->phone}}</td>
 				<td>{{$user->address}}</td>
-				<td>
-					<a href="/user/{{$user->userId}}">Details</a> | 
-					<a href="/user/{{$user->userId}}/edit">Edit</a> | 
-					<a href="/user/{{$user->userId}}/delete">Delete</a>
-				</td>
 			</tr>
 		@endforeach
 	</table>
