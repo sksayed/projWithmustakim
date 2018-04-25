@@ -4,15 +4,11 @@
 	<title></title>
 </head>
 <body>
-	<h2>List of Sold Products</h2>
+	<h2>List of Sold Pendings</h2>
 	<a href="/admindashboard">Back to Home</a> | 
 	<br/><br/>
-	<form method="post" action="/product/search">
-		<input type="text" name="searchText">
-		<input type="submit" value="Search">
-	</form>
 	<br/>
-	<table border="1">
+		<table border="1">
 		<tr>
 			<th>ID</th>
 			<th>PRODUCT NAME</th>
@@ -24,6 +20,7 @@
 			<th>ZIP CODE</th>
 			<th>DELIVERY STATUS</th>
 			<th>ORDER DATE</th>
+			<th>Option</th>
 		</tr>
 		<?php 
 		      $totalPrice = 0;
@@ -41,6 +38,7 @@
 				<td>{{$soldp->zipcode}}</td>
 				<td>{{$soldp->delivery}}</td>
 				<td>{{$soldp->Orderdate}}</td>
+				<td><a href="/product/{{$soldp->id}}/statusUpdate">Approve</a></td>
 				<?php 
 		      		$totalPrice+=$soldp->price; 
 		      		$totalQuantity+=$soldp->quantity;          
@@ -56,5 +54,6 @@
 			
 		</tr>
 	</table>
+
 </body>
 </html>

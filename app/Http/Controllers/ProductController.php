@@ -56,7 +56,18 @@ class ProductController extends Controller
     	return view('product.edit', ['product' => $product]);
 
     }
+    public function statusUpdate($id)
+    {
+        $params = [
+            'delivery'=>'yes'
+        ];
+        DB::table('soldproduct')
+            ->where('id', $id)
+            ->update($params);
 
+        return redirect('/product/soldPendings');
+
+    }
     public function delete($id)
     {
     	$product = Product::find($id);
@@ -127,7 +138,6 @@ class ProductController extends Controller
     {
     	$products = Product::where('productname', 'LIKE', "%$request->searchText%")
 			->get();
-
 		return view('product.index', ['products' => $products]);
     }
        public function productSold()
@@ -150,7 +160,7 @@ class ProductController extends Controller
          ->get();
 
         //dd($products);
-        return view('product.productSold', ['soldproduct' => $soldproduct]);
+        return view('product.soldPendings', ['soldproduct' => $soldproduct]);
     }
     public function searchSoldproduct(Request $request)
     {

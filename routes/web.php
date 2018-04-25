@@ -61,6 +61,7 @@ Route::get('/product/soldPendings', 'ProductController@soldPendings')->name('pro
 Route::post('/product/searchSoldproduct','ProductController@searchSoldproduct');
 Route::post('/product/searchByCatagorySoldproduct', 'ProductController@searchByCatagorySoldproduct');
 Route::get('/product/{id}/edit', 'ProductController@edit');
+Route::get('/product/{id}/statusUpdate', 'ProductController@statusUpdate');
 Route::get('/product/{id}/delete', 'ProductController@delete');
 Route::post('/product', 'ProductController@store');
 Route::post('/product/search', 'ProductController@search');
