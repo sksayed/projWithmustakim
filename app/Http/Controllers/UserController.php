@@ -15,6 +15,14 @@ class UserController extends Controller
 
         return view('user.index', ['users' => $users]);
     }
+    public function userProfile(Request $request)
+    {
+        $users = DB::table('users')
+            ->where('username',$request->session()->get('user'))
+            ->get();
+
+        return view('user.userProfile', ['users' => $users]);
+    }
 
     /**
      * Show the form for creating a new resource.

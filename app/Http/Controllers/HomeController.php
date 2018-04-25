@@ -11,6 +11,7 @@ class HomeController extends Controller
     {
     	$products=DB::table('products')
             ->join('categories', 'products.categoryId', '=', 'categories.id')
+            ->orderBy('rank', 'desc')
             ->select('products.*', 'categories.categoryname')
             ->get();
         $categories=DB::table('categories')
