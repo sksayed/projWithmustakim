@@ -65,8 +65,9 @@
                     </tbody>
                   </table>
                   
-                  <a href="/user/useredit/<%=result[i].username%>" class="btn btn-primary">Edit Profile</a>
-                  <a href="/user/broughthistory/<%=result[i].id%>" class="btn btn-primary">Buy History</a>
+                  <a href="/user/{{$user->id}}/edit" class="btn btn-warning">Edit Profile</a>
+                  <a href="/user/{{$user->id}}/buyHistory" class="btn btn-success">Buy History</a>
+                  <a href="/user/{{$user->id}}/editPassword" class="btn btn-danger">Change Password</a>
                 </div>
               </div>
             </div>

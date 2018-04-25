@@ -50,9 +50,7 @@ Route::post('/category', 'CategoryController@store');
 // Route::post('/category/search', 'CategoryController@search');
 // Route::put('/category/{id}', 'CategoryController@update');
 // Route::delete('/category/{id}', 'CategoryController@destroy');
-//User
-Route::get('/user', 'UserController@index')->name('user.index');
-Route::post('/user/search','UserController@search');
+
 //Product
 
 Route::get('/product/create', 'ProductController@create')->name('product.create');
@@ -79,6 +77,14 @@ Route::get('/cart/removefromcart/{rowid}','CartController@destroy');
 
 //User Middleware
 Route::group(['middleware' => ['usersess']], function(){
+	Route::get('/user', 'UserController@index')->name('user.index');
+	Route::post('/user/search','UserController@search');
+	Route::get('/user/{id}/edit','UserController@edit');
+	Route::get('/user/{id}/editPassword','UserController@editPassword');
+	Route::get('/user/{id}/buyHistory','UserController@buyHistory');
+	Route::get('/user/{id}/userOrderDetails','UserController@userOrderDetails');
+	Route::put('/user/{id}', 'UserController@update');
+	Route::put('/user/{id}/updatePassword', 'UserController@updatePassword');
 	Route::group(['middleware' => ['cartverify']], function(){
 	//Checkout
 	Route::get('/checkout','CheckoutController@index')->name('checkout.index');

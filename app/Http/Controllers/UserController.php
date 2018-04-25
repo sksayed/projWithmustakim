@@ -64,7 +64,13 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = DB::table('users')->find($id);
+        return view('user.edit', ['user' => $user]);
+    }
+    public function editPassword($id)
+    {
+        $user = DB::table('users')->find($id);
+        return view('user.editPassword', ['user' => $user]);
     }
 
     /**
@@ -76,7 +82,37 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $params = [
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'phone'=>$request->phone,
+            'address'=>$request->address
+        ];
+        DB::table('users')
+            ->where('id', $id)
+            ->update($params);
+
+        return redirect('/user/userProfile');
+    }
+    public function updatePassword(Request $request, $id)
+    {
+        $params1 = [
+            'password'=>$request->newPassword
+        ];
+        $oldPassword = DB::table('users')
+             ->where('id',$id)
+             ->value('password');
+        if($request->oldPassword == $oldPassword)
+        {
+            DB::table('users')
+            ->where('id', $id)
+            ->update($params1);
+            return redirect('/user/userProfile');
+        }
+        else{
+            $request->session()->flash('message', 'Incorrect Password');
+            return redirect()->back();
+        }
     }
 
     /**
@@ -96,5 +132,21 @@ class UserController extends Controller
             ->get();
 
         return view('user.index', ['users' => $users]);
+    }
+    public function buyHistory($id)
+    {
+        $orders = DB::table('orders')
+            ->where('customerId',$id)
+            ->get();
+
+        return view('user.buyHistory', ['orders' => $orders]);
+    }
+    public function userOrderDetails($id)
+    {
+        $soldProducts = DB::table('soldProduct')
+            ->where('orderId',$id)
+            ->get();
+
+        return view('user.userOrderDetails', ['soldProducts' => $soldProducts]);
     }
 }
