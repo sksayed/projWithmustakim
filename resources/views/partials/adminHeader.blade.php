@@ -17,7 +17,7 @@
         <li class="active"><a href="{{route('product.create')}}">Add Product<span class="sr-only">(current)</span></a></li>
         <li class="active"><a href="{{route('product.index')}}">All Product </a></li>
         <li><a href="/admindashboard/create">Add Admin </a></li>
-		<li><a href="{{route('user.index')}}">Users </a></li>
+		<li><a href="{{route('admindashboard.userindex')}}">Users </a></li>
     <li><a href="/product/soldPendings">Sold Pendings</a></li>
     <li><a href="/product/productSold">Sold product</a></li>
 

@@ -97,4 +97,19 @@ class AdminDashboardController extends Controller
     {
         //
     }
+    public function userindex()
+    {
+        $users = DB::table('users')
+            ->get();
+
+        return view('admindashboard.userindex', ['users' => $users]);
+    }
+    public function userSearch(Request $request)
+    {
+        $users = DB::table('users')
+            ->where('username', 'LIKE', "%$request->searchText%")
+            ->get();
+
+        return view('admindashboard.userindex', ['users' => $users]);
+    }
 }

@@ -18,6 +18,7 @@ Route::get('/', function () {
 
 //Home
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/index/{id}/catagorysearch', 'HomeController@catagorysearch');
 //Registration
 Route::get('/registration', 'RegistrationController@index')->name('registration.index');
 Route::post('/registration', 'RegistrationController@store');
@@ -38,6 +39,8 @@ Route::group(['middleware' => ['adminsess']], function(){
 //Admin Dashboard
 Route::get('/admindashboard', 'AdminDashboardController@index')->name('admindashboard');
 Route::get('/admindashboard/create', 'AdminDashboardController@create')->name('admindashboard.create');
+Route::get('/admindashboard/userindex', 'AdminDashboardController@userindex')->name('admindashboard.userindex');
+Route::post('/admindashboard/userSearch','AdminDashboardController@userSearch');
 Route::post('/admindashboard', 'AdminDashboardController@store');
 
 //Category
@@ -57,7 +60,7 @@ Route::get('/product/create', 'ProductController@create')->name('product.create'
 Route::get('/product/productSold', 'ProductController@productSold')->name('product.productSold');
 Route::get('/product/soldPendings', 'ProductController@soldPendings')->name('product.soldPendings');
 Route::post('/product/searchSoldproduct','ProductController@searchSoldproduct');
-Route::post('/product/searchByCatagorySoldproduct', 'ProductController@searchByCatagorySoldproduct');
+Route::get('/product/{id}/searchByCatagorySoldproduct', 'ProductController@searchByCatagorySoldproduct');
 Route::get('/product/{id}/edit', 'ProductController@edit');
 Route::get('/product/{id}/statusUpdate', 'ProductController@statusUpdate');
 Route::get('/product/{id}/delete', 'ProductController@delete');
@@ -77,8 +80,6 @@ Route::get('/cart/removefromcart/{rowid}','CartController@destroy');
 
 //User Middleware
 Route::group(['middleware' => ['usersess']], function(){
-	Route::get('/user', 'UserController@index')->name('user.index');
-	Route::post('/user/search','UserController@search');
 	Route::get('/user/{id}/edit','UserController@edit');
 	Route::get('/user/{id}/editPassword','UserController@editPassword');
 	Route::get('/user/{id}/buyHistory','UserController@buyHistory');

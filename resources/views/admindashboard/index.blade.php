@@ -36,7 +36,7 @@
 	  </div>
 	  <div class="well">
 	  	<h2 class="text-left">
-	  		<a href="{{route('user.index')}}">Users</a>
+	  		<a href="{{route('admindashboard.userindex')}}">Users</a>
 	  	</h2>
 	  </div>
 	  <div class="well">

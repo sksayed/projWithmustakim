@@ -10,10 +10,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = DB::table('users')
-            ->get();
-
-        return view('user.index', ['users' => $users]);
+        
     }
     public function userProfile(Request $request)
     {
@@ -127,11 +124,7 @@ class UserController extends Controller
     }
     public function search(Request $request)
     {
-        $users = DB::table('users')
-            ->where('username', 'LIKE', "%$request->searchText%")
-            ->get();
-
-        return view('user.index', ['users' => $users]);
+        //
     }
     public function buyHistory($id)
     {

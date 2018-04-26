@@ -7,7 +7,7 @@
 	<h2>List of Users</h2>
 	<a href="/admindashboard">Back to Home</a>
 	<br/><br/>
-	<form method="post" action="/user/search">
+	<form method="post" action="/admindashboard/userSearch">
 		<input type="text" name="searchText">
 		<input type="submit" value="Search">
 	</form>

@@ -13,16 +13,34 @@
 		<input type="text" name="searchText">
 		<input type="submit" value="Search">
 	</form>
-
-	<form method="post" action="/product/searchByCatagorySoldproduct">
-		<label>Search by Category:</label>
-		<select name="cat">
-				<option value="1">Men</option>
-				<option value="2">Women</option>
-				<option value="3">Food</option>
-				<option value="4">Electronics</option>
-		</select>
-		<input type="submit" value="Search">
+	<label>Search by Category:</label>
+		<!-- <select name="cat">
+			@foreach($categories as $cat)
+				<a href="/product/{{$cat->id}}/searchByCatagorySoldproduct"><option value="{{$cat->id}}">{{$cat->categoryname}}</option></a>
+			@endforeach
+		<br> -->
+		<nav class="navbar navbar-inverse">
+		  <div class="container-fluid">
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav my-nav">
+		        <li class="dropdown my-dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Select Product <span class="caret text-right"></span></a>
+		          <ul class="dropdown-menu">
+		          	@foreach($categories as $cat)
+		          		<li><a href="/product/{{$cat->id}}/searchByCatagorySoldproduct">{{$cat->categoryname}}</a></li>
+		          	@endforeach
+		          </ul>
+		        </li>
+		      </ul>
+		      </div>
+		  </div>
+		</nav>
+	<form method="post" action="/product/searchSoldproduct">
+		<label>Search by data:</label>
+		<div>
+			From:
+			  <input type="date" name="fromdob">
+		</div>
 	</form>
 </div>
 	<br/>

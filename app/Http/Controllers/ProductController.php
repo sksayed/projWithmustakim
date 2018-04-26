@@ -147,9 +147,10 @@ class ProductController extends Controller
         $soldproduct = DB::table('soldproduct')
          ->where('delivery','yes')
          ->get();
-
+         $categories=DB::table('categories')
+            ->get();
         //dd($products);
-        return view('product.productSold', ['soldproduct' => $soldproduct]);
+        return view('product.productSold', ['soldproduct' => $soldproduct,'categories'=>$categories]);
     }
      public function soldPendings()
     {
@@ -165,17 +166,21 @@ class ProductController extends Controller
     public function searchSoldproduct(Request $request)
     {
             $soldproduct = DB::table('soldproduct')
+                ->where('delivery','yes')
                 ->where('productname', 'LIKE', "%$request->searchText%")
                 ->get();
             
         return view('product.productSold', ['soldproduct' => $soldproduct]);
     }
-    public function searchByCatagorySoldproduct(Request $request)
+    public function searchByCatagorySoldproduct(Request $request,$id)
     {
             $soldproduct = DB::table('soldproduct')
-                ->where('categoryId', $request->cat)
+                ->join('categories','soldproduct.categoryId', '=', 'categories.id')
+                ->where('categories.id',$id)
+                ->where('delivery','yes')
+                ->select('soldproduct.*', 'categories.categoryname')
                 ->get();
-            
+
         return view('product.productSold', ['soldproduct' => $soldproduct]);
     }
 }

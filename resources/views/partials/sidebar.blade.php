@@ -13,7 +13,7 @@
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Select Product <span class="caret text-right"></span></a>
 	          <ul class="dropdown-menu">
 	          	@foreach($categories as $c)
-	          		<li><a href="/index/catagorysearch/{{$c->categoryname}}">{{$c->categoryname}}</a></li>
+	          		<li><a href="/index/{{$c->id}}/catagorysearch">{{$c->categoryname}}</a></li>
 	          	@endforeach
 	          </ul>
 	        </li>
