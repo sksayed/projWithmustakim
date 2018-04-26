@@ -20,13 +20,6 @@
 		<li><a href="{{route('admindashboard.userindex')}}">Users </a></li>
     <li><a href="/product/soldPendings">Sold Pendings</a></li>
     <li><a href="/product/productSold">Sold product</a></li>
-
-    <form method="post" action="/admindashboard/search" class="navbar-form navbar-left">
-      <div class="form-group">
-        <input type="text" class="form-control" id="search" name="search" placeholder="Search">
-      </div>
-      <button type="submit" id="submit" class="btn btn-default">Submit</button>
-    </form>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

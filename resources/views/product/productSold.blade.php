@@ -46,11 +46,14 @@
 		      </div>
 		  </div>
 		</nav>
-	<form method="post" action="/product/searchSoldproduct">
-		<label>Search by data:</label>
+	<form method="post" action="/product/searchSoldproductbyDate">
+		<label>Search by Date:</label>
 		<div>
 			From:
-			  <input type="date" name="fromdob">
+			  <input type="date" name="fromdate">
+			  To:
+			  <input type="date" name="todate">
+			  <input type="submit" value="Search">
 		</div>
 	</form>
 </div>

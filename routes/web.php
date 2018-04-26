@@ -60,6 +60,7 @@ Route::get('/product/create', 'ProductController@create')->name('product.create'
 Route::get('/product/productSold', 'ProductController@productSold')->name('product.productSold');
 Route::get('/product/soldPendings', 'ProductController@soldPendings')->name('product.soldPendings');
 Route::post('/product/searchSoldproduct','ProductController@searchSoldproduct');
+Route::post('/product/searchSoldproductbyDate','ProductController@searchSoldproductbyDate');
 Route::get('/product/{id}/searchByCatagorySoldproduct', 'ProductController@searchByCatagorySoldproduct');
 Route::get('/product/{id}/edit', 'ProductController@edit');
 Route::get('/product/{id}/statusUpdate', 'ProductController@statusUpdate');

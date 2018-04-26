@@ -68,7 +68,12 @@
 			<th></th>
 			<th>Total: {{$totalQuantity}}</th>
 			<th>Total: {{$totalPrice}}</th>
-			
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
 		</tr>
 	</table>
 
