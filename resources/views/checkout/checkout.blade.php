@@ -43,7 +43,7 @@
 	                        	@foreach($cartproducts as $cp)
 	                        		<div class="form-group">
 	                        		    <div class="col-sm-3 col-xs-3">
-	                        		        <img class="img-responsive" src="https://i.imgur.com/ruU04I6.jpg" />
+	                        		        <img class="img-responsive" src="{{asset('images/product.jpg')}}" />
 	                        		    </div>
 	                        		    <div class="col-sm-5 col-xs-5">
 	                        		        <input type="hidden" name="productid" value="{{$cp->id}}">

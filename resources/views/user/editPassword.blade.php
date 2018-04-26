@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Change Password</title>
+	@include('partials.head')
 </head>
 <body>
 	<h2>Edit Password</h2>
@@ -23,7 +24,7 @@
 				<td>Enter New Password:</td>
 				<td><input type="password" name="newPassword"></td>
 			</tr>
-				<td><input type="submit" value="Update"></td>
+				<td><button type="submit" class="btn btn-primary">Update</button></td>
 			</tr>
 		</table>
 	</form>

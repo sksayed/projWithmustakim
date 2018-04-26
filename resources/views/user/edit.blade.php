@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Edit Profile</title>
+	@include('partials.head')
 </head>
 <body>
 	<h2>Edit User</h2>
@@ -32,7 +33,7 @@
 			</tr>
 			<tr>
 				<td></td>
-				<td><input type="submit" value="Update"></td>
+				<td><button type="submit" class="btn btn-primary">Update</button></td>
 			</tr>
 		</table>
 	</form>

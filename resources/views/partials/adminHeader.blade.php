@@ -20,6 +20,13 @@
 		<li><a href="{{route('admindashboard.userindex')}}">Users </a></li>
     <li><a href="/product/soldPendings">Sold Pendings</a></li>
     <li><a href="/product/productSold">Sold product</a></li>
+    <li>
+      <a href="{{route('logout')}}">
+        <button class="btn-danger btn pull-right">
+          Logout
+        </button>
+      </a>
+    </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

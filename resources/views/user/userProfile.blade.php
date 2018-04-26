@@ -6,7 +6,7 @@
 <div class="container">
       <div class="row">
       <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
-          <A href="/index" >Home</A>
+          <A href="/home" >Home</A>
           <A href="/logout" >Logout</A>
        <br>
 <p class=" text-info"></p>
