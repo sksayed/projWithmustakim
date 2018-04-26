@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Product Pending</title>
+		@include('partials.head')
+		<style>
+	    table {
+	        font-family: arial, sans-serif;
+	        border-collapse: collapse;
+	        width: 100%;
+	    }
+
+	    td, th {
+	        border: 1px solid #dddddd;
+	        text-align: left;
+	        padding: 8px;
+	    }
+
+	    tr:nth-child(even) {
+	        background-color: #dddddd;
+	    }
+	    </style>
 </head>
 <body>
+	@include('partials.adminheader')
 	<h2>List of Sold Pendings</h2>
-	<a href="/admindashboard">Back to Home</a> | 
-	<br/><br/>
 	<br/>
 		<table border="1">
 		<tr>
