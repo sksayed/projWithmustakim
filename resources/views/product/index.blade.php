@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Product list</title>
+		@include('partials.head')
+		<style>
+	    table {
+	        font-family: arial, sans-serif;
+	        border-collapse: collapse;
+	        width: 100%;
+	    }
+
+	    td, th {
+	        border: 1px solid #dddddd;
+	        text-align: left;
+	        padding: 8px;
+	    }
+
+	    tr:nth-child(even) {
+	        background-color: #dddddd;
+	    }
+	    </style>
 </head>
 <body>
+	@include('partials.adminheader')
 	<h2>List of Products</h2>
-	<a href="/admindashboard">Back to Home</a> | 
-	<a href="/product/create">Create New</a>
-	<br/><br/>
+	<h3><a class="text-success" href="/product/create">Create New</a></h3>
 	<form method="post" action="/product/search">
 		<input type="text" name="searchText">
 		<input type="submit" value="Search">
