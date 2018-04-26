@@ -30,18 +30,12 @@
 		<input type="text" name="searchText">
 		<input type="submit" value="Search">
 	</form>
-	<label>Search by Category:</label>
-		<!-- <select name="cat">
-			@foreach($categories as $cat)
-				<a href="/product/{{$cat->id}}/searchByCatagorySoldproduct"><option value="{{$cat->id}}">{{$cat->categoryname}}</option></a>
-			@endforeach
-		<br> -->
 		<nav class="navbar navbar-inverse">
 		  <div class="container-fluid">
 				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav my-nav">
 		        <li class="dropdown my-dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Select Product <span class="caret text-right"></span></a>
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Search by Category <span class="caret text-right"></span></a>
 		          <ul class="dropdown-menu">
 		          	@foreach($categories as $cat)
 		          		<li><a href="/product/{{$cat->id}}/searchByCatagorySoldproduct">{{$cat->categoryname}}</a></li>
@@ -102,7 +96,11 @@
 			<th></th>
 			<th>Total: {{$totalQuantity}}</th>
 			<th>Total: {{$totalPrice}}</th>
-			
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
 		</tr>
 	</table>
 </body>

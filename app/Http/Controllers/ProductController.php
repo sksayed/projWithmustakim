@@ -169,8 +169,9 @@ class ProductController extends Controller
                 ->where('delivery','yes')
                 ->where('productname', 'LIKE', "%$request->searchText%")
                 ->get();
-            
-        return view('product.productSold', ['soldproduct' => $soldproduct]);
+            $categories=DB::table('categories')
+               ->get();
+        return view('product.productSold', ['soldproduct' => $soldproduct,'categories'=>$categories]);
     }
     public function searchByCatagorySoldproduct(Request $request,$id)
     {
@@ -180,7 +181,8 @@ class ProductController extends Controller
                 ->where('delivery','yes')
                 ->select('soldproduct.*', 'categories.categoryname')
                 ->get();
-
-        return view('product.productSold', ['soldproduct' => $soldproduct]);
+                $categories=DB::table('categories')
+                   ->get();
+        return view('product.productSold', ['soldproduct' => $soldproduct,'categories'=>$categories]);
     }
 }
