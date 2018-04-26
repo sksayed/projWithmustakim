@@ -67,7 +67,7 @@
 	                	<button type="submit" class=" pull-right btn-link font"><a href="www.google.com">Forget password</a></button><br>
 	                </div>
 	                <div class="panel-footer font">
-	                    Not Registred? <a href="./reg">Register here</a>
+	                    Not Registred? <a href="/registration">Register here</a>
 	                </div>
 	            </div>
 	        </div>
