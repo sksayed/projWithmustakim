@@ -25,27 +25,34 @@
 	@include('partials.adminheader')
 	<h2>List of Sold Products</h2>
 	<div>
+		
+		<div class="row">
+			<div class="col-md-3">
+				<nav class="navbar navbar-inverse">
+				  <div class="container-fluid">
+						    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				      <ul class="nav navbar-nav my-nav">
+				        <li class="dropdown my-dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Search by Category <span class="caret text-right"></span></a>
+				          <ul class="dropdown-menu">
+				          	@foreach($categories as $cat)
+				          		<li><a href="/product/{{$cat->id}}/searchByCatagorySoldproduct">{{$cat->categoryname}}</a></li>
+				          	@endforeach
+				          </ul>
+				        </li>
+				      </ul>
+				      </div>
+				  </div>
+				</nav>
+			</div>
+			<div class="col-md-9"></div>
+		</div>
 	<form method="post" action="/product/searchSoldproduct">
 		<label>Search by Product Name:</label>
 		<input type="text" name="searchText">
 		<input type="submit" value="Search">
 	</form>
-		<nav class="navbar navbar-inverse">
-		  <div class="container-fluid">
-				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		      <ul class="nav navbar-nav my-nav">
-		        <li class="dropdown my-dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Search by Category <span class="caret text-right"></span></a>
-		          <ul class="dropdown-menu">
-		          	@foreach($categories as $cat)
-		          		<li><a href="/product/{{$cat->id}}/searchByCatagorySoldproduct">{{$cat->categoryname}}</a></li>
-		          	@endforeach
-		          </ul>
-		        </li>
-		      </ul>
-		      </div>
-		  </div>
-		</nav>
+		
 	<form method="post" action="/product/searchSoldproductbyDate">
 		<label>Search by Date:</label>
 		<div>
