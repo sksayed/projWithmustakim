@@ -19,6 +19,7 @@ Route::get('/', function () {
 //Home
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/index/{id}/catagorysearch', 'HomeController@catagorysearch');
+Route::post('/index/search', 'HomeController@search');
 //Registration
 Route::get('/registration', 'RegistrationController@index')->name('registration.index');
 Route::post('/registration', 'RegistrationController@store');

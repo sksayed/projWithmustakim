@@ -29,4 +29,15 @@ class HomeController extends Controller
             ->get();
         return view('home.index',['products' => $products,'categories'=>$categories]);
     }
+    public function search(Request $request)
+    {
+            $products = DB::table('products')
+                ->join('categories', 'products.categoryId', '=', 'categories.id')
+                ->orderBy('rank', 'desc')
+                ->where('productname', 'LIKE', "%$request->searchText%")
+                ->get();
+            $categories=DB::table('categories')
+               ->get();
+        return view('home.index', ['products' => $products,'categories'=>$categories]);
+    }
 }

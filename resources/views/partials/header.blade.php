@@ -31,9 +31,9 @@
       </ul>
       <form method="post" action="/index/search" class="navbar-form navbar-left">
         <div class="form-group">
-          <input type="text" class="form-control" id="search" name="search" placeholder="Search" required>
+          <input type="text" class="form-control" id="search" name="searchText" placeholder="Search" required>
         </div>
-        <button type="submit" id="submit" class="btn btn-default">Submit</button>
+        <button type="submit" id="submit" class="btn btn-default">Search</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
         
