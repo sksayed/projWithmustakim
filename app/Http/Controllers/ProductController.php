@@ -173,6 +173,16 @@ class ProductController extends Controller
                ->get();
         return view('product.productSold', ['soldproduct' => $soldproduct,'categories'=>$categories]);
     }
+    public function searchSoldproductbyDate(Request $request)
+    {
+            $soldproduct = DB::table('soldproduct')
+                ->where('delivery','yes')
+                ->whereBetween('Orderdate', array($request->fromdate, $request->todate))
+                ->get();
+            $categories=DB::table('categories')
+               ->get();
+        return view('product.productSold', ['soldproduct' => $soldproduct,'categories'=>$categories]);
+    }
     public function searchByCatagorySoldproduct(Request $request,$id)
     {
             $soldproduct = DB::table('soldproduct')
