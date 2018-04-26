@@ -22,8 +22,8 @@
 	    </style>
 </head>
 <body>
+	@include('partials.adminheader')
 	<h2>List of Users</h2>
-	<a href="/admindashboard">Back to Home</a>
 	<br/><br/>
 	<form method="post" action="/admindashboard/userSearch">
 		<input type="text" name="searchText">
