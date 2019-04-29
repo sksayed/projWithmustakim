@@ -26,7 +26,7 @@
 		                        <label for="inputEmail3" class="col-sm-3 control-label font">
 		                            Username</label>
 		                        <div class="col-sm-9">
-		                            <input type="text" class="form-control font" id="inputEmail3" placeholder="Username" name="username">
+		                            <input type="text" class="form-control font" id="inputEmail3" placeholder="Username" name="username" value="{{ old('username')}}"/>
 		                        </div>
 		                        <p class="text-danger">
 		                        	@if($errors->has('username'))
@@ -38,7 +38,7 @@
 		                        <label for="inputPassword3" class="col-sm-3 control-label font">
 		                            Password</label>
 		                        <div class="col-sm-9">
-		                            <input type="password" class="form-control font" id="inputPassword3" placeholder="Password" name="password">
+		                            <input type="password" class="form-control font" id="inputPassword3" placeholder="Password" name="password" >
 		                        </div>
 		                        <p class="text-danger">
 		                        	@if($errors->has('password'))

@@ -1,6 +1,6 @@
 <html>
 <div class="mtt_catagory">
-    <img src="https://s6.postimg.org/9m3yvl65p/catagory_icon.png" />
+    <img src="https://static.thenounproject.com/png/6670-200.png" height="30" width="30" />
     Catagory
 </div>
 <div id="mainselection">

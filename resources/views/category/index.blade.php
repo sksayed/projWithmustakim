@@ -5,7 +5,7 @@
 </head>
 <body>
 	<h2>List of Categories</h2>
-	<a href="/home">Back to Home</a> | 
+	<a href="/admindashboard">Back to Dashboard</a> | 
 	<a href="/category/create">Create New</a>
 	<br/><br/>
 	<form method="post" action="/category/search">
@@ -21,12 +21,12 @@
 		</tr>
 		@foreach($categories as $cat)
 			<tr>
-				<td>{{$cat->categoryId}}</td>
-				<td>{{$cat->categoryName}}</td>
+				<td>{{$cat->id}}</td>
+				<td>{{$cat->categoryname}}</td>
 				<td>
-					<a href="/category/{{$cat->categoryId}}">Details</a> | 
-					<a href="/category/{{$cat->categoryId}}/edit">Edit</a> | 
-					<a href="/category/{{$cat->categoryId}}/delete">Delete</a>
+					<a href="/category/{{$cat->id}}">Details</a> | 
+					<a href="/category/{{$cat->id}}/edit">Edit</a> | 
+					<a href="/category/{{$cat->id}}/delete">Delete</a>
 				</td>
 			</tr>
 		@endforeach

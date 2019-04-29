@@ -15,8 +15,8 @@ class HomeController extends Controller
             ->select('products.*', 'categories.categoryname')
             ->get();
         $categories=DB::table('categories')
-        	->get();
-        return view('home.index', ['products' => $products,'categories'=>$categories]);  	
+        	->get(); //,'categories'=>$categories
+        return view('home.index',  ['products'=>$products ,'categories'=>$categories] );  	
     }
     public function catagorysearch(Request $request,$id)
     {

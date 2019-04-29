@@ -7,16 +7,16 @@
 	<h2>Edit Category</h2>
 	<a href="/category">Back to List</a>
 	<br/><br/>
-	<form method="post" action="/category/{{$category->categoryId}}">
-		<input type="hidden" name="_method" value="put">
+	<form method="post" action="/category/{{$category->id}}/update">
+		
 		<table>
 			<tr>
 				<td>CATEGORY ID:</td>
-				<td>{{$category->categoryId}}</td>
+				<td>{{$category->id}}</td>
 			</tr>
 			<tr>
 				<td>CATEGORY NAME:</td>
-				<td><input type="text" name="catname" value="{{$category->categoryName}}"></td>
+				<td><input type="text" name="catname" value="{{$category->categoryname}}"></td>
 			</tr>
 			<tr>
 				<td></td>

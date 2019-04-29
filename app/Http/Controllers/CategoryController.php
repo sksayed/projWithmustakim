@@ -23,7 +23,7 @@ class CategoryController extends Controller
     public function show($id)
     {
     	$category = DB::table('categories')
-    		->where('categoryId', $id)
+    		->where('id', $id)
     		->first();
 
     	return view('category.details', ['category' => $category]);
@@ -37,7 +37,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
     	$category = DB::table('categories')
-    		->where('categoryId', $id)
+    		->where('id', $id)
     		->first();
 
     	return view('category.edit', ['category' => $category]);
@@ -46,7 +46,7 @@ class CategoryController extends Controller
     public function delete($id)
     {
     	$category = DB::table('categories')
-    		->where('categoryId', $id)
+    		->where('id', $id)
     		->first();
 
     	return view('category.delete', ['category' => $category]);
@@ -55,7 +55,7 @@ class CategoryController extends Controller
     public function store(CreateCategoryRequest $request)
     {
         $params = [
-            'categoryName' => $request->catname
+            'categoryname' => $request->catname
         ];
     	DB::table('categories')
     		->insert($params);
@@ -66,10 +66,10 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
     	$params = [
-    		'categoryName' => $request->catname
+    		'categoryname' => $request->catname
     	];
     	DB::table('categories')
-    		->where('categoryId', $id)
+    		->where('id', $id)
     		->update($params);
 
     	return redirect('/category');
@@ -77,8 +77,10 @@ class CategoryController extends Controller
 
     public function destroy($id)
     {
+		// echo "$id ke delete korte hbe ";
+
     	DB::table('categories')
-    		->where('categoryId', $id)
+    		->where('id', $id)
     		->delete();
 
     	return redirect('/category');
@@ -87,7 +89,7 @@ class CategoryController extends Controller
     public function search(Request $request)
     {
     	$categories = DB::table('categories')
-    		->where('categoryName', 'LIKE', "%$request->searchText%")
+    		->where('categoryname', 'LIKE', "%$request->searchText%")
     		->get();
 
     	return view('category.index', ['categories' => $categories]);

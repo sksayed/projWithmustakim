@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     //protected $table = 'products';
-    public $primaryKey = 'productId';
+   // public $primaryKey = 'productId';
     //public $incrementing = false;
     public $timestamps = false;
     //const CREATED_AT = 'creation_date';

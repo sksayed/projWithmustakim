@@ -10,7 +10,7 @@
 	<table>
 		<tr>
 			<td>PRODUCT ID:</td>
-			<td>{{$product->productId}}</td>
+			<td>{{$product->id}}</td>
 		</tr>
 		<tr>
 			<td>PRODUCT NAME:</td>
@@ -31,8 +31,8 @@
 	</table>
 
 	<h3>Are you sure?</h3>
-	<form method="post" action="/product/{{$product->productId}}">
-		<input type="hidden" name="_method" value="delete">
+	<form method="post" action="/product/{{$product->id}}/delete">
+		
 		<!--
 		<input type="hidden" name="pid" value="{{$product->productId}}">
 		-->

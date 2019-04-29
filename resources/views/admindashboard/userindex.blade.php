@@ -36,6 +36,8 @@
 			<th>NAME</th>
 			<th>Phone</th>
 			<th>address</th>
+			<th>Option</th>
+			
 		</tr>
 		@foreach($users as $user)
 			<tr>
@@ -43,6 +45,8 @@
 				<td>{{$user->username}}</td>
 				<td>{{$user->phone}}</td>
 				<td>{{$user->address}}</td>
+				<td><a href="/user/{{$user->id}}/delete">Delete </a>|
+					</td>
 			</tr>
 		@endforeach
 	</table>

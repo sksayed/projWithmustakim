@@ -9,13 +9,14 @@
 	<header>
 		@include('partials.adminHeader')
 	</header>
-	<div class="panel panel-primary">
+	<!--<div class="panel panel-primary">
 		<a href="{{route('logout')}}">
 			<button class="btn-danger btn pull-right">
 				Logout
 			</button>
 		</a>
 	</div>
+-->
 	<!-- if you want to create login page and register page together in one page ...you have to only chnage his name...that's it...                 -->
 	<div class="container font" style="margin-top: 1%;">
 	  <div class="row">

@@ -10,19 +10,19 @@
 	<table>
 		<tr>
 			<td>CATEGORY ID:</td>
-			<td>{{$category->categoryId}}</td>
+			<td>{{$category->id}}</td>
 		</tr>
 		<tr>
 			<td>CATEGORY NAME:</td>
-			<td>{{$category->categoryName}}</td>
+			<td>{{$category->categoryname}}</td>
 		</tr>
 	</table>
 
 	<h3>Are you sure?</h3>
-	<form method="post" action="/category/{{$category->categoryId}}">
-		<input type="hidden" name="_method" value="delete">
+	<form method="post" action="/category/{{$category->id}}/delete">
+		
 		<!--
-		<input type="hidden" name="catId" value="{{$category->categoryId}}">
+		<input type="hidden" name="catId" value="{{$category->id}}">
 		-->
 		<input type="submit" value="Confirm">
 	</form>

@@ -6,16 +6,16 @@
 <body>
 	<h2>Category Details</h2>
 	<a href="/category">Back to List</a> | 
-	<a href="/category/{{$category->categoryId}}/edit">Edit</a>
+	<a href="/category/{{$category->id}}/edit">Edit</a>
 	<br/><br/>
 	<table>
 		<tr>
 			<td>CATEGORY ID:</td>
-			<td>{{$category->categoryId}}</td>
+			<td>{{$category->id}}</td>
 		</tr>
 		<tr>
 			<td>CATEGORY NAME:</td>
-			<td>{{$category->categoryName}}</td>
+			<td>{{$category->categoryname}}</td>
 		</tr>
 	</table>
 

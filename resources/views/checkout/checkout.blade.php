@@ -54,14 +54,14 @@
 	                        		    </div>
 	                        		    <div class="col-sm-3 col-xs-3 text-right">
 	                        		    	<input type="hidden" name="price" value="{{$cp->price}}">
-	                        		        <h5><span>BDT</span> {{$cp->subtotal}}</h5>
+	                        		        <h5><span>BDT</span> {{$cp->price}}</h5>
 	                        		    </div>
 	                        		    <div class="col-sm-1 col-xs-1 text-right">
 	                        		        <h6><a href="/cart/removefromcart/{{$cp->rowId}}"><i class="glyphicon glyphicon-remove"></i></a></h6>
 	                        		    </div>
 	                        		</div>
                         			<?php
-                        				$subtotal+=$cp->subtotal
+                        				$subtotal+=$cp->price
                         			?>
 	                        		@endforeach                       	                        
 	                            <div class="form-group"><hr /></div>

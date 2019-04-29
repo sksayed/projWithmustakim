@@ -36,6 +36,7 @@ class RegistrationController extends Controller
             ];
         $user=DB::table('users')
             ->insert($params);
+            //it returns true on registration
 
         if($user)
         {

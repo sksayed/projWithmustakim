@@ -112,4 +112,13 @@ class AdminDashboardController extends Controller
 
         return view('admindashboard.userindex', ['users' => $users]);
     }
+    public function userdelete(Request $request,$id)
+    {
+        DB::table('users')
+        ->where('id', $id)
+        ->delete();
+
+    return redirect('/admindashboard/userindex');
+        
+    }
 }
